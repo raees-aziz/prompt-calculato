@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Prompt calculator</title>
+</head>
+
+<body>
+    <h3>Prompt Calculator</h3>
+    <h3>Raees Aziz</h3>
+    <h3>WMA-132796</h3>
+
+    <div class="padd">
+        <div class="flex">
+            <div class="box" id="value_1-1">1st Value
+                <div id="value_1">0</div>
+            </div>
+
+            <div class="box" id="value_2-1">2nd Value
+                <div id="value_2">0</div>
+            </div>
+
+            <div class="box" id="operator-1">Operator
+                <div id="operator">0</div>
+            </div>
+        </div>
+
+        <div class="flex-2">
+            <div class="box-2" id="row-1">Answer
+                <div id="row">0</div>
+            </div>
+
+            <div class="box-2">Task
+                <div id="work">0</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // assinging variable
+        var a = document.getElementById('row').innerText = "raees aziz";
+
+
+        let value_1 = prompt("Enter first value", 3);
+        let value_2 = prompt("Enter second value", 3);
+        let operator = prompt("Enter arithematic operator", "- + * / %");
+
+        document.getElementById('value_1').innerText = value_1;
+        document.getElementById('value_2').innerText = value_2;
+        document.getElementById('operator').innerText = operator;
+
+        if (operator === "+") {
+            document.getElementById('row').innerText = (Number(value_1) + Number(value_2));
+            document.getElementById('work').innerText = "ADDITION";
+        }
+        else if (operator === "-") {
+            document.getElementById('row').innerText = (value_1 - value_2);
+            document.getElementById('work').innerText = "SUBRACTION";
+        }
+        else if (operator === "*") {
+            document.getElementById('row').innerText = (value_1 * value_2);
+            document.getElementById('work').innerText = "MULTIPLICATION";
+        }
+        else if (operator === "/") {
+            document.getElementById('row').innerText = (value_1 / value_2);
+            document.getElementById('work').innerText = "DIVISION";
+        }
+        else if (operator === "%") {
+            document.getElementById('row').innerText = (value_1 % value_2);
+            document.getElementById('work').innerText = "REMINDER";
+        }
+        else {
+            document.getElementById('work').innerText = "EROR USE CORRECT NUMBER & OPERATOR"
+            document.getElementById('value_1-1').style.display = "none";
+            document.getElementById('row-1').style.display = "none";
+            document.getElementById('value_2-1').style.display = "none";
+            document.getElementById('operator-1').style.display = "none";
+        }
+
+
+
+    </script>
+</body>
+
+</html>
